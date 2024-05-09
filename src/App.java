@@ -6,6 +6,7 @@ public class App {
     public static void main(String args[]) {
         JFrame menuFrame = new JFrame("Menu");
         menuFrame.setSize(700, 500);
+        menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel(new BorderLayout());
 
@@ -24,6 +25,8 @@ public class App {
 class StartButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println("Button clicked!");
+        System.out.println("Black Jack CLICKED");
+        blackJack game = new blackJack(); 
+        game.blackJackMenu();
     }
 }
