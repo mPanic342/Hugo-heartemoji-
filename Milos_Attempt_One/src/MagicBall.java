@@ -1,14 +1,10 @@
 import javax.swing.JOptionPane;
 import java.util.Random;
-// class name must be same as class file
 public class MagicBall {
-// method for storing guessing variables
     public void guess(){
-        // declaring variables
         String message = "Do you have any questions for the magical and mysterious 8-ball that will forever control your life?";
-        String title = "MAGIC 8-BALL";
+        String title = "Input question here";
         String input = (JOptionPane.showInputDialog(message, title));
-        // declaring word bank
         if (input != null && !input.trim().isEmpty()) {
             Random random = new Random();
             String[] responses = {
@@ -33,9 +29,12 @@ public class MagicBall {
                 "Outlook not so good.",
                 "Very doubtful."
             };
-         int randomIndex = random.nextInt(responses.length);
-            String randomResponse = responses[randomIndex];
-        
+            
+        int randomIndex = random.nextInt(responses.length);
+        String randomResponse = responses[randomIndex];
+            
+        JOptionPane.showMessageDialog(null, randomResponse, "MAGIC 8-BALL RESPONSE", JOptionPane.INFORMATION_MESSAGE);
+            
+        }
     };
-}
-}
+    }
