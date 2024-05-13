@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class blackJack { // Changed class name to start with uppercase
+public class blackJack {
     public void blackJackMenu() {
         JFrame menuFrame = new JFrame("Menu");
         menuFrame.setSize(700, 500);
