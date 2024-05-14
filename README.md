@@ -1,4 +1,5 @@
-# Hugo-
-Hugo and Milos create a magical magic 8 ball
+# Hugo-Milos
 
-for some reason, i couldn't do a pull request to main because src is some weird hyperlink file
+In order to use the app run App.Java
+
+then just click any button you want c;
