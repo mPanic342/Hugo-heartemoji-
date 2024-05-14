@@ -1,6 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.net.MalformedURLException;
+
 
 public class App {
     public static void main(String args[]) {
@@ -18,17 +20,19 @@ public class App {
         // panel for menu buttons
         JPanel buttonPanel = new JPanel(new FlowLayout());
 
+        // slots button with action listener to tell when it is clicked
         JButton startSlotsButton = new JButton("Start Slots");
         startSlotsButton.setPreferredSize(new Dimension(150, 50));
         startSlotsButton.setFocusable(false);
         buttonPanel.add(startSlotsButton);
         startSlotsButton.addActionListener(new StartSlotsButtonListener(menuFrame));
 
-        JButton startMagic8BallButton = new JButton("Start Magic 8-Ball");
-        startMagic8BallButton.setPreferredSize(new Dimension(200, 50));
-        startMagic8BallButton.setFocusable(false);
-        buttonPanel.add(startMagic8BallButton);
-        startMagic8BallButton.addActionListener(new StartMagic8BallButtonListener(menuFrame));
+        // magicball button with action listener to tell when it is clicked
+        JButton startMagicBallButton = new JButton("Start Magic 8-Ball");
+        startMagicBallButton.setPreferredSize(new Dimension(200, 50));
+        startMagicBallButton.setFocusable(false);
+        buttonPanel.add(startMagicBallButton);
+        startMagicBallButton.addActionListener(new StartMagicBallButtonListener(menuFrame));
 
         panel.add(buttonPanel, BorderLayout.SOUTH);
 
@@ -37,6 +41,8 @@ public class App {
     }
 }
 
+
+// stolen since i had no idea how to do this 
 class StartSlotsButtonListener implements ActionListener {
     private JFrame menuFrame;
     
@@ -51,16 +57,24 @@ class StartSlotsButtonListener implements ActionListener {
     }
 }
 
-class StartMagic8BallButtonListener implements ActionListener {
+// stolen since i had no idea how to do this 
+class StartMagicBallButtonListener implements ActionListener {
     private JFrame menuFrame;
     
-    public StartMagic8BallButtonListener(JFrame menuFrame) {
+    public StartMagicBallButtonListener(JFrame menuFrame) {
         this.menuFrame = menuFrame;
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        System.out.println("Magic 8-Ball functionality will be implemented here.");
+        try {
+            MagicBall guessObject = new MagicBall();
+
+            guessObject.guess();
+        } catch (MalformedURLException ex) {
+
+            ex.printStackTrace(); 
+        }
     }
 }
